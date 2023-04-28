@@ -52,6 +52,7 @@ body{
   src: url("./fonts/biotif/Biotif-Black.ttf");
   font-weight: 900;
 }
+
 @font-face {
   font-family: "Biotif";
   src: url("./fonts/biotif/Biotif-LightItalic.ttf");
