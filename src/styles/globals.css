@@ -9,7 +9,7 @@
 
 
 body{
-  @apply  bg-blend-lighten backdrop-brightness-75 bg-right-bottom sm:bg-center bg-fixed  min-h-screen; 
+  @apply  bg-blend-lighten backdrop-brightness-75 bg-center bg-fixed  min-h-screen; 
   @apply bg-dark font-biotif text-grayText;
   background-image: url('bg.png') ;
   

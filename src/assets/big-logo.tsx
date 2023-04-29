@@ -35,7 +35,7 @@ export function BigLogo() {
       ref={ref}
       width='507'
       height='480'
-      viewBox='-50 -50 657 710'
+      viewBox='-50 -50 557 610'
       className='transform-gpu'
       xmlns='http://www.w3.org/2000/svg'>
       <motion.path
