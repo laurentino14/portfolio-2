@@ -9,11 +9,11 @@
 
 
 body{
-  @apply  bg-blend-lighten backdrop-brightness-75 bg-fixed  min-h-screen; 
+  @apply  bg-blend-lighten backdrop-brightness-75 bg-right-bottom sm:bg-center bg-fixed  min-h-screen; 
   @apply bg-dark font-biotif text-grayText;
   background-image: url('bg.png') ;
   
-  background-position: center;
+  
   background-repeat: no-repeat;
   background-size: cover;
 }

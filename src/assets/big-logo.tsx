@@ -8,42 +8,46 @@ import {
 import {useRef} from 'react'
 
 export function BigLogo() {
+  const value = useMotionValue([0, 180])
   const animation = {
-    hidden: {
-      scale: 0,
-      opacity: 0,
-    },
-    show: {
-      scale: 1,
-      opacity: 1,
+    l: {
+      fill: ['#EEE', '#EE4055', '#EEE', '#EE4055', '#EEE'],
+      opacity: [1, 1, 1, 1, 1],
+      scale: [1, 1.1, 1, 1.1, 1],
     },
   }
 
   const time = useTime()
-  const value = useMotionValue([0, 4000])
-  const rotate = useTransform(time, [0, 4000], [0, 150], {clamp: false})
+  const rotate = useTransform(time, [0, 4000], [-150, 150], {clamp: false})
   const ref = useRef(null)
+  const ref2 = useRef(null)
 
   useAnimationFrame(t => {
     const y = 1 + Math.sin(t / 1000) * 25
     // @ts-ignore
-    ref.current.style.transform = `translateY(${-y}px) translateX(${y}px)`
+    ref.current.style.transform = `translateY(${y}px) translateX(${y}px) rotate(${
+      -y * 0.2
+    }deg)`
   })
+
   return (
     <motion.svg
       ref={ref}
       width='507'
       height='480'
       viewBox='-50 -50 657 710'
-      fill='none'
+      className='transform-gpu'
       xmlns='http://www.w3.org/2000/svg'>
       <motion.path
-        variants={animation}
-        initial='hidden'
-        animate='show'
+        whileHover={{fill: '#ee4055'}}
         transition={{
-          type: 'spring',
-          duration: '.1s',
+          ease: 'easeInOut',
+          duration: 0.1,
+
+          // bounce: true,
+          // damping: true,
+          stiffness: 10,
+          times: [0, 0.33, 0.5, 0.66, 0.83, 1],
         }}
         fillRule='evenodd'
         clipRule='evenodd'
@@ -51,13 +55,19 @@ export function BigLogo() {
         fill='#EEEEEE'
       />
       <motion.path
+        ref={ref2}
         variants={animation}
-        initial='hidden'
-        animate='show'
+        animate='l'
         transition={{
-          delay: 0.5,
-          type: 'spring',
-          duration: '.1s',
+          ease: 'easeInOut',
+          duration: 1,
+          bounce: true,
+          damping: true,
+          stiffness: 10,
+          times: [0, 0.33, 0.5, 0.66, 1],
+          repeat: Infinity,
+          repeatDelay: 1,
+          repeatType: 'loop',
         }}
         d='M245.311 331.156H340.348V379.402H187.083V95.539H245.311V331.156Z'
         fill='#EEEEEE'

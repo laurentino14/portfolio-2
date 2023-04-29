@@ -3,7 +3,7 @@ import Link from 'next/link'
 export function Header() {
   return (
     <header className='h-16 flex items-center justify-center'>
-      <nav className='flex items-center justify-center text-sm font-medium gap-10'>
+      <nav className='flex items-center justify-center text-sm font-medium gap-2 sm:gap-10'>
         <Link
           className='hover:text-white  w-16 text-center'
           href='/articles'
