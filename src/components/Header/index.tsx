@@ -61,8 +61,8 @@ export function Header() {
         </nav>
       </div>
       <div className='hidden  md:block'>
-        <Button variant='secondary' shadow='special' asChild>
-          <Link href='/'>Contact me</Link>
+        <Button className='' variant='secondary' size='normal' asChild>
+          <Link href='/'>Github</Link>
         </Button>
       </div>
     </header>

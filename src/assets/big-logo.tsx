@@ -1,14 +1,12 @@
 import {
   motion,
   useAnimationFrame,
-  useMotionValue,
   useTime,
-  useTransform,
+  useTransform
 } from 'framer-motion'
-import {useRef} from 'react'
+import { useRef } from 'react'
 
 export function BigLogo() {
-  const value = useMotionValue([0, 180])
   const animation = {
     l: {
       fill: ['#EEE', '#EE4055', '#EEE', '#EE4055', '#EEE'],
@@ -39,7 +37,7 @@ export function BigLogo() {
       className='transform-gpu'
       xmlns='http://www.w3.org/2000/svg'>
       <motion.path
-        whileHover={{fill: '#ee4055'}}
+        whileHover={{fill: '#fff'}}
         transition={{
           ease: 'easeInOut',
           duration: 0.1,

@@ -2,10 +2,20 @@ import {Slot} from '@radix-ui/react-slot'
 import {VariantProps, cva} from 'class-variance-authority'
 import {HTMLAttributes} from 'react'
 
-export function Button({variant, shadow, size, children, asChild}: Props) {
+export function Button({
+  variant,
+  shadow,
+  size,
+  children,
+  asChild,
+  className,
+  ...rest
+}: Props) {
   const Component = asChild ? Slot : 'button'
   return (
-    <Component className={styles({variant, size, shadow})}>
+    <Component
+      className={styles({variant, size, shadow}) + ' ' + className}
+      {...rest}>
       {children}
     </Component>
   )
@@ -16,9 +26,11 @@ const styles = cva('flex items-center justify-center  text-sm transition', {
     variant: {
       primary: {},
       secondary: 'bg-white hover:bg-neutral-100 text-dark',
+      dark: ' hover:bg-dark text-slate-400 hover:text-white',
     },
     size: {
       normal: ' py-2 px-3',
+      undefined: '',
     },
     radius: {
       true: 'rounded-md',
