@@ -5,8 +5,8 @@ import type {AppProps} from 'next/app'
 export default function App({Component, pageProps}: AppProps) {
   return (
     <>
-      <Header />
       <main className='px-8 2xl:px-0'>
+        <Header />
         <Component {...pageProps} />
       </main>
     </>

@@ -1,7 +1,10 @@
-import {AnimatePresence, motion} from 'framer-motion'
+import {
+  AnimatePresence,
+  motion
+} from 'framer-motion'
 import Link from 'next/link'
-import {useState} from 'react'
-import {Button} from '../Button'
+import { useState } from 'react'
+import { Button } from '../Button'
 
 export function Header() {
   const [active, setActive] = useState('home')
@@ -12,7 +15,7 @@ export function Header() {
     {id: 'job', label: 'Job'},
   ]
   return (
-    <header className='h-16 px-8 xl:px-0 flex items-center justify-center md:justify-between mx-auto max-w-7xl'>
+    <header className='h-16  flex items-center justify-center md:justify-between mx-auto max-w-7xl'>
       <div className='gap-2 sm:gap-10 flex items-center justify-start'>
         <Link href='/' passHref>
           <button
@@ -68,3 +71,4 @@ export function Header() {
     </header>
   )
 }
+
