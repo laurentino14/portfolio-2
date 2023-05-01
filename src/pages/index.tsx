@@ -41,7 +41,7 @@ export default function Home(props: {title: string}) {
         <title>{title}</title>
       </Head>
       <main className='max-w-7xl mx-auto relative min-h-[calc(100vh-4rem)] flex lg:pl-20 lg:pr-12 2xl:px-0 items-center justify-between'>
-        <div className='flex flex-col justify-center px-8 mx-auto lg:mx-0 w-fit lg:px-0 items-start'>
+        <div className='flex flex-col justify-center  mx-auto lg:mx-0 w-fit  items-start'>
           <div className='bg-clip-text bg-gradient-to-br from-neutral-300 to-neutral-50'>
             <h1 className='font-neuzeit text-transparent mb-[0.125rem] text-4xl tracking-[-0.05rem] leading-[100%]'>
               Lucas Laurentino
