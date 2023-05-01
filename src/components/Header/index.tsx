@@ -24,38 +24,38 @@ export function Header() {
         <nav className='flex items-center justify-center text-sm font-medium gap-2 sm:gap-10'>
           {tabs.map(item => {
             return (
-              // <Link key={item.id} href={`/${item.id === 'l' ? '/' : item.id}`}>
-              <button
-                key={item.id}
-                onClick={() => {
-                  setActive(item.id)
-                }}
-                className={` hover:text-white  py-1 px-3   text-center relative transition`}>
-                <AnimatePresence>
-                  {active === item.id && (
-                    <motion.div
-                      initial={{opacity: 0}}
-                      animate={{opacity: 1}}
-                      exit={{opacity: 0}}
-                      layoutId={'header-active-pill'}
-                      style={{
-                        borderRadius: 9999,
-                        z: active === 'l' ? 0 : undefined,
-                      }}
-                      className={` bg-neutral-200/10 absolute   inset-0`}
-                    />
-                  )}
-                </AnimatePresence>
-                <span
-                  className={`${
-                    item.id === active
-                      ? 'text-white mix-blend-luminosity'
-                      : 'text-slate-400'
-                  }  z-20 relative transition`}>
-                  {item.label}
-                </span>
-              </button>
-              // </Link>
+              <Link key={item.id} href={`/${item.id === 'l' ? '/' : item.id}`}>
+                <button
+                  key={item.id}
+                  onClick={() => {
+                    setActive(item.id)
+                  }}
+                  className={` hover:text-white  py-1 px-3   text-center relative transition`}>
+                  <AnimatePresence>
+                    {active === item.id && (
+                      <motion.div
+                        initial={{opacity: 0}}
+                        animate={{opacity: 1}}
+                        exit={{opacity: 0}}
+                        layoutId={'header-active-pill'}
+                        style={{
+                          borderRadius: 9999,
+                          z: active === 'l' ? 0 : undefined,
+                        }}
+                        className={` bg-neutral-200/10 absolute   inset-0`}
+                      />
+                    )}
+                  </AnimatePresence>
+                  <span
+                    className={`${
+                      item.id === active
+                        ? 'text-white mix-blend-luminosity'
+                        : 'text-slate-400'
+                    }  z-20 relative transition`}>
+                    {item.label}
+                  </span>
+                </button>
+              </Link>
             )
           })}
         </nav>

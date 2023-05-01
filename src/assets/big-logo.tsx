@@ -1,10 +1,5 @@
-import {
-  motion,
-  useAnimationFrame,
-  useTime,
-  useTransform
-} from 'framer-motion'
-import { useRef } from 'react'
+import {motion, useAnimationFrame, useTime, useTransform} from 'framer-motion'
+import {useRef} from 'react'
 
 export function BigLogo() {
   const animation = {
@@ -17,15 +12,15 @@ export function BigLogo() {
 
   const time = useTime()
   const rotate = useTransform(time, [0, 4000], [-150, 150], {clamp: false})
-  const ref = useRef(null)
+  const ref = useRef<any | null>(null)
   const ref2 = useRef(null)
 
   useAnimationFrame(t => {
     const y = 1 + Math.sin(t / 1000) * 25
-    // @ts-ignore
-    ref.current.style.transform = `translateY(${y}px) translateX(${y}px) rotate(${
-      -y * 0.2
-    }deg)`
+    if (ref.current)
+      ref.current.style.transform = `translateY(${y}px) translateX(${y}px) rotate(${
+        -y * 0.2
+      }deg)`
   })
 
   return (
