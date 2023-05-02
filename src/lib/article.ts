@@ -1,7 +1,7 @@
-import {readFileSync, readdirSync} from 'fs'
+import { readFileSync, readdirSync } from 'fs'
 import matter from 'gray-matter'
-import {join} from 'path'
-import {remark} from 'remark'
+import { join } from 'path'
+import { remark } from 'remark'
 import gfm from 'remark-gfm'
 // @ts-ignore
 import remarkHeadingId from 'remark-heading-id'
@@ -14,7 +14,7 @@ export async function convertMarkdownToHtml(md: any) {
   const result = await remark()
     .use(remarkHeadingId)
     .use(html, {sanitize: false})
-    .use(remarkToc, {ordered: true, tight: true})
+    .use(remarkToc, { ordered: true, tight: true, skip: '_' })
     .use(gfm)
     .use(prism, {
       plugins: ['line-numbers'],

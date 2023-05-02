@@ -1,17 +1,17 @@
 #contentPost > h2{
-  @apply text-slate-100 font-semibold leading-[160%] text-3xl md:text-4xl;
+  @apply text-white font-semibold mb-0 leading-[160%] text-3xl md:text-4xl;
 }
 #contentPost > h3{
-  @apply text-slate-100 font-semibold leading-[160%] text-2xl md:text-3xl;
+  @apply text-white font-semibold mb-0 leading-[160%] text-2xl md:text-3xl;
 }
 #contentPost > h4{
-  @apply text-slate-100 font-semibold leading-[160%] text-xl md:text-2xl;
+  @apply text-white font-semibold mb-0 leading-[160%] text-xl md:text-2xl;
 }
 #contentPost > h5{
-  @apply text-slate-100 font-semibold leading-[160%] text-lg md:text-xl;
+  @apply text-white font-semibold mb-0 leading-[160%] text-lg md:text-xl;
 }
 #contentPost > h6{
-  @apply text-slate-100 font-semibold leading-[160%] md:text-lg;
+  @apply text-white font-semibold mb-0 leading-[160%] md:text-lg;
 }
 
 #contentPost > hr{
@@ -30,11 +30,11 @@
 }
 
 #contentPost > blockquote {
-  @apply bg-gradient-to-br mb-5 from-primary/10 via-transparent  to-transparent rounded-lg py-3 px-2 border-l-8 border-primary;
+  @apply bg-gradient-to-br mb-5 text-slate-300 from-primary/10  to-primary/5 rounded-lg py-3 px-2 border-l-8 border-l-primary;
 }
 
 #contentPost > ol {
-  @apply ml-10 my-6;
+  @apply  my-6 text-slate-300;
   list-style-type: upper-roman;
   list-style-position: inside;
 }
@@ -42,8 +42,7 @@
   @apply text-slate-200 font-black;
 }
 #contentPost > ol > li > ol {
-  @apply ml-6;
-  list-style-type: upper-latin;
+  list-style-type: numeric;
   list-style-position: inside;
 }
 #contentPost > ol > li > ol > li::marker {
@@ -51,7 +50,6 @@
 }
 
 #contentPost > ol > li > ol> li> ol {
-  @apply ml-6;
   list-style-position: inside;
   list-style-type: lower-latin;
 }
@@ -61,7 +59,7 @@
 
 
 #contentPost > ul {
-  @apply ml-10  my-6;
+  @apply   my-6 text-slate-300;
   list-style-type: disc;
   list-style-position: inside;
 }
@@ -69,7 +67,6 @@
   @apply text-slate-200 text-xl font-black;
 }
 #contentPost > ul > li > ul {
-  @apply ml-6;
   list-style-type: circle;
   list-style-position: inside;
 }
@@ -78,7 +75,6 @@
 }
 
 #contentPost > ul > li > ul> li> ul {
-  @apply ml-6;
   list-style-position: inside;
   list-style-type: square;
 }
@@ -131,3 +127,19 @@ background-color: #ffb709;
  #contentPost > p > a{
   @apply text-slate-500 hover:text-slate-100 transition;
  }
+
+ #contentPost > #a{
+  opacity: 0;
+ }
+
+ #contentPost > #summary{
+  @apply -mt-12 md:-mt-9 text-white;
+ }
+
+ #contentPost > :nth-child(2){
+  @apply hidden;
+ }
+
+#contentPost > center {
+  @apply text-slate-300;
+}

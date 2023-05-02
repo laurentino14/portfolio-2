@@ -2,6 +2,7 @@ import {GitHubLogoIcon} from '@radix-ui/react-icons'
 import {AnimatePresence, motion} from 'framer-motion'
 import Link from 'next/link'
 import {useState} from 'react'
+import {BiCommand} from 'react-icons/bi'
 import {Button} from '../Button'
 
 export function Header() {
@@ -61,11 +62,14 @@ export function Header() {
           })}
         </nav>
       </div>
-      <div className='hidden  md:block'>
+      <div className='hidden md:flex gap-6'>
         <Button className='' variant='transparent' size='undefined' asChild>
           <Link href='https://github.com/laurentino14' target='_blank'>
             <GitHubLogoIcon width={25} height={25} />
           </Link>
+        </Button>
+        <Button className='' variant='dark' size='undefined'>
+          <BiCommand className='text-2xl' />
         </Button>
       </div>
     </header>

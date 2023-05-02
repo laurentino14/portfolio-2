@@ -21,9 +21,11 @@ author:
 coAuthors: [{name: 'Leonardo Jean', job: 'Junior Software Engineer'}]
 ---
 
+#### Summary {#summary}
+
 #### Table of contents
 
----
+# \_ {#a}
 
 ## Teste {#teste}
 
@@ -71,6 +73,18 @@ _Lorem_ ipsum dolor sit amet consectetur adipisicing elit. Quidem sunt
 1. aaa
 1. aaa
 1. aaa
+
+# H1
+
+## H2
+
+### H3
+
+#### H4
+
+##### H5
+
+###### H6
 
 _Lorem_ ipsum dolor sit amet consectetur adipisicing elit. Quidem sunt id quis
 perspiciatis quae aspernatur obcaecati! Nemo alias, similique tempore laudantium

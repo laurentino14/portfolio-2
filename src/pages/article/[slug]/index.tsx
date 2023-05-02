@@ -30,7 +30,7 @@ export default function Article({
         className={`box-border  relative overflow-hidden   backdrop-opaci bg-no-repeat bg-center bg-fixed bg-cover h-[calc(100vh-4rem)] opacity-20`}
       /> */}
       <div className='max-w-7xl mx-auto shadow-inner mt-10 xl:mt-24'>
-        <figure>
+        <figure className=''>
           <Image
             src={img}
             width={1000}
@@ -39,11 +39,8 @@ export default function Article({
             alt=''
             className='aspect-[3/1.5] rounded-lg object-cover lg:w-2/3 mx-auto'
           />
-          <figcaption className='text-center w-full mt-6 text-sm font-medium text-slate-500'>
-            123
-          </figcaption>
         </figure>
-        <div className='flex items-center mt-10 xl:mt-24 space-x-20 justify-start'>
+        <div className='flex items-center mt-20 xl:mt-36 space-x-20 justify-start'>
           <h1 className='font-neuzeit text-3xl w-full  md:text-5xl text-white'>
             {title}
           </h1>
@@ -56,7 +53,7 @@ export default function Article({
       </div>
       <main
         id='contentPost'
-        className={` max-w-7xl pb-1 mx-auto mt-20 min-h-[150vh]`}
+        className={`prose  prose-a:text-slate-400 prose-img:transition  prose-img:hover:brightness-110  prose-a:no-underline lg:prose-blockquote:text-base lg:prose-lg max-w-7xl pb-1 mx-auto mt-20 min-h-[150vh]`}
         dangerouslySetInnerHTML={{__html: content}}
       />
     </>
