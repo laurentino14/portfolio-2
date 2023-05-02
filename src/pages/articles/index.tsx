@@ -1,4 +1,5 @@
 import {ArticlesCard} from '@/components/ArticleCards'
+import {Divider} from '@/components/Divider'
 import {getAllPosts} from '@/lib/article'
 import {GetStaticProps} from 'next'
 import Head from 'next/head'
@@ -21,20 +22,22 @@ export default function Articles({posts}: {posts: [Post]}) {
       <Head>
         <title>Lucas Laurentino - Articles</title>
       </Head>
-      <main className='max-w-7xl mx-auto pb-20 mt-24'>
-        {posts && <ArticlesCard isMostRecent post={posts[0]} />}
+      <main className='max-w-7xl mx-auto pb-24 mt-24'>
+        {posts && <ArticlesCard post={posts[0]} />}
+        <Divider />
 
-        <div
-          id='react'
-          className='mb-10 md:mb-20 bg-primary  w-fit bg-clip-text'>
-          {/* <h1 className='mt-10  md:mt-20 font-neuzeit text-transparent text-3xl'>
-            React/NextJS
-          </h1> */}
-        </div>
-        <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-y-8 lg:gap-y-0 md:gap-4  mt-8'>
+        <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-y-8 lg:gap-y-8 md:gap-4  mt-8'>
           {posts.map((post, i) => {
-            if (i !== 0) {
+            if (i !== 0 && i < 7) {
               return <ArticlesCard key={post.slug} post={post} />
+            }
+          })}
+        </div>
+        <Divider />
+        <div className='grid  items-center gap-y-10'>
+          {posts.map((post, i) => {
+            if (i !== 0 && i > 6) {
+              return <ArticlesCard i={i} key={post.slug} post={post} />
             }
           })}
         </div>

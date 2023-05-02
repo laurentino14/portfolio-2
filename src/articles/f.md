@@ -1,7 +1,7 @@
 ---
 title: 'Teste Title MD'
-slug: 'a'
-date: '2023-05-2'
+slug: 'f'
+date: '2023-04-1'
 tag: 'reactjs'
 img: 'https://dkrn4sk0rn31v.cloudfront.net/uploads/2018/09/28135119/capa-docker.jpg'
 summary:
@@ -18,7 +18,12 @@ author:
     img: 'https://github.com/laurentino14.png',
   }
 
-coAuthors: [{name: 'Leonardo Jean', job: 'Junior Software Engineer'}]
+coAuthors:
+  [
+    {name: 'Leonardo Jean', job: 'Junior Software Engineer'},
+    {name: 'Leonardo Jean', job: 'Junior Software Engineer'},
+    {name: 'Leonardo Jean', job: 'Junior Software Engineer'},
+  ]
 ---
 
 # Conteúdo da Aula

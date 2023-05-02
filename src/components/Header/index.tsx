@@ -1,10 +1,8 @@
-import {
-  AnimatePresence,
-  motion
-} from 'framer-motion'
+import {GitHubLogoIcon} from '@radix-ui/react-icons'
+import {AnimatePresence, motion} from 'framer-motion'
 import Link from 'next/link'
-import { useState } from 'react'
-import { Button } from '../Button'
+import {useState} from 'react'
+import {Button} from '../Button'
 
 export function Header() {
   const [active, setActive] = useState('home')
@@ -64,11 +62,12 @@ export function Header() {
         </nav>
       </div>
       <div className='hidden  md:block'>
-        <Button className='' variant='secondary' size='normal' asChild>
-          <Link href='/'>Github</Link>
+        <Button className='' variant='transparent' size='undefined' asChild>
+          <Link href='https://github.com/laurentino14' target='_blank'>
+            <GitHubLogoIcon width={25} height={25} />
+          </Link>
         </Button>
       </div>
     </header>
   )
 }
-

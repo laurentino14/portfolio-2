@@ -24,9 +24,10 @@ export function Button({
 const styles = cva('flex items-center justify-center  text-sm transition', {
   variants: {
     variant: {
-      primary: {},
+      primary: 'bg-primary text-white hover:bg-primary/90',
       secondary: 'bg-white hover:bg-neutral-100 text-dark',
       dark: ' hover:bg-dark text-slate-400 hover:text-white',
+      transparent: 'text-slate-400 hover:text-white',
     },
     size: {
       normal: ' py-2 px-3',
