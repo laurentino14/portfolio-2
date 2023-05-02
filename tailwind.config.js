@@ -15,6 +15,14 @@ module.exports = {
       fontFamily: {
         biotif: ['Biotif', 'sans-serif'],
         neuzeit: ['Neuzeit', 'Biotif', 'sans-serif'],
+        firacode: [
+          'var(--font-firacode)',
+          'monospace',
+          'Consolas',
+          'Monaco',
+          'Andale Mono',
+          'Ubuntu Mono',
+        ],
       },
       backgroundImage: {
         gradientBG: '',

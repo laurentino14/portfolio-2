@@ -6,6 +6,7 @@
   margin:0;
   padding:0;
   scroll-behavior: smooth;
+  @apply selection:bg-slate-600 selection:text-white;
 }
 
 
@@ -100,3 +101,4 @@ body{
   src: url("./fonts/neuzeit/neuzeitgrot-bold.ttf");
   font-weight: 800;
 }
+

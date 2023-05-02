@@ -29,10 +29,10 @@ export function ArticlesCard({post, isMostRecent}: Props) {
           width={1000}
           height={1000}
           quality={100}
-          className='mx-auto  h-full max-h-96 w-full aspect-square @md:rounded-lg object-cover @7xl:aspect-[3/2] transition ease-in-out'
+          className='mx-auto  h-full max-h-96 w-full aspect-square rounded-lg object-cover @7xl:aspect-[3/2] transition ease-in-out'
           alt=''
         />
-        <div className='flex h-fit  3xl:h-full @3xl:pr-4 flex-col justify-between space-y-4 py-6'>
+        <div className='flex h-fit 3xl:h-full @3xl:pr-4 flex-col justify-between space-y-4 py-6'>
           <div className=''>
             <div className=' w-fit bg-clip-text'>
               <h1 className='text-xl text-white font-bold tracking-wide @3xl:text-3xl'>

@@ -3,7 +3,6 @@ import {Button} from '@/components/Button'
 import {AnimatePresence, motion} from 'framer-motion'
 import {GetStaticProps} from 'next'
 import Head from 'next/head'
-import {useEffect} from 'react'
 import {useMediaQuery} from 'react-responsive'
 
 export const getStaticProps: GetStaticProps = () => {
@@ -34,7 +33,6 @@ export default function Home(props: {title: string}) {
     },
   }
 
-
   return (
     <>
       <Head>
@@ -47,8 +45,9 @@ export default function Home(props: {title: string}) {
               Lucas Laurentino
             </h1>
           </div>
-          <h3
-            className='font-biotif mb-4 text-2xl tracking-[-0.03rem]  text-slate-300'>Software Engineer</h3>
+          <h3 className='font-biotif mb-4 text-2xl tracking-[-0.03rem]  text-slate-300'>
+            Software Engineer
+          </h3>
 
           <p className='leading-[120%] max-w-md mb-4 text-slate-300 text-start'>
             passionate about clean architecture

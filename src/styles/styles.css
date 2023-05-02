@@ -1,0 +1,133 @@
+#contentPost > h2{
+  @apply text-slate-100 font-semibold leading-[160%] text-3xl md:text-4xl;
+}
+#contentPost > h3{
+  @apply text-slate-100 font-semibold leading-[160%] text-2xl md:text-3xl;
+}
+#contentPost > h4{
+  @apply text-slate-100 font-semibold leading-[160%] text-xl md:text-2xl;
+}
+#contentPost > h5{
+  @apply text-slate-100 font-semibold leading-[160%] text-lg md:text-xl;
+}
+#contentPost > h6{
+  @apply text-slate-100 font-semibold leading-[160%] md:text-lg;
+}
+
+#contentPost > hr{
+  @apply border-none h-[1px] rounded-full bg-gradient-to-r from-slate-800  to-transparent mb-10;
+}
+#contentPost > p{
+  @apply leading-[120%] text-slate-300  mb-5;
+}
+
+#contentPost > p > img{
+  @apply rounded-lg mx-auto  relative my-10;
+}
+
+#contentPost > p>strong{
+  @apply text-slate-200;
+}
+
+#contentPost > blockquote {
+  @apply bg-gradient-to-br mb-5 from-primary/10 via-transparent  to-transparent rounded-lg py-3 px-2 border-l-8 border-primary;
+}
+
+#contentPost > ol {
+  @apply ml-10 my-6;
+  list-style-type: upper-roman;
+  list-style-position: inside;
+}
+#contentPost > ol > li::marker {
+  @apply text-slate-200 font-black;
+}
+#contentPost > ol > li > ol {
+  @apply ml-6;
+  list-style-type: upper-latin;
+  list-style-position: inside;
+}
+#contentPost > ol > li > ol > li::marker {
+  @apply text-slate-300 font-medium;
+}
+
+#contentPost > ol > li > ol> li> ol {
+  @apply ml-6;
+  list-style-position: inside;
+  list-style-type: lower-latin;
+}
+#contentPost > ol > li > ol> li> ol >li::marker {
+  @apply text-slate-300;
+}
+
+
+#contentPost > ul {
+  @apply ml-10  my-6;
+  list-style-type: disc;
+  list-style-position: inside;
+}
+#contentPost > ul > li::marker {
+  @apply text-slate-200 text-xl font-black;
+}
+#contentPost > ul > li > ul {
+  @apply ml-6;
+  list-style-type: circle;
+  list-style-position: inside;
+}
+#contentPost > ul > li > ul > li::marker {
+  @apply text-slate-300 text-xl font-medium;
+}
+
+#contentPost > ul > li > ul> li> ul {
+  @apply ml-6;
+  list-style-position: inside;
+  list-style-type: square;
+}
+#contentPost > ul > li > ul> li> ul >li::marker {
+  @apply text-slate-300 text-xl;
+}
+
+#contentPost > .specialHeading{
+  @apply text-transparent bg-gradient-to-r from-primary to-purple-500
+}
+
+.contains-task-list > li{
+  list-style-type: none;
+  @apply ml-0 gap-2 mb-2  text-lg pt-[8px];
+}
+.task-list-item > input{
+background-color: #ffb709;
+@apply after:w-5 after:h-5 ml-2 mr-4 after:-bottom-1 relative after:rounded-sm after:outline-2 after:outline after:outline-zinc-900 after:text-slate-50 after:checked:outline-primary after:checked:bg-primary after:bg-zinc-800 after:absolute;
+}
+
+.task-list-item > input:checked::after{
+  content: "✓";
+  @apply flex items-center justify-center
+}
+
+#contentPost > table {
+  @apply bg-dark my-10 box-border rounded-lg outline outline-2 outline-zinc-900 w-full mx-auto md:w-2/3; 
+}
+
+#contentPost > table > thead  {
+  @apply  rounded-t-lg py-2;
+}
+#contentPost > table > thead >  tr {
+  @apply bg-slate-400 text-neutral-900 rounded-t-lg py-2;
+}
+#contentPost > table > thead > tr > th {
+  @apply first:rounded-tl-lg last:rounded-tr-lg py-2;
+}
+#contentPost > table > thead > tr:first-child  {
+  @apply rounded-tl-lg ;
+}
+
+#contentPost > table > tbody > tr{ 
+  @apply border-b-[1px] border-slate-600/40 last:border-none;
+}
+#contentPost > table > tbody > tr > td {
+  @apply py-2 border-r-[1px] text-slate-400 border-slate-600/40 last:border-none;
+ }
+ 
+ #contentPost > p > a{
+  @apply text-slate-500 hover:text-slate-100 transition;
+ }

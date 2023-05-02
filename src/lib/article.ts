@@ -2,14 +2,23 @@ import {readFileSync, readdirSync} from 'fs'
 import matter from 'gray-matter'
 import {join} from 'path'
 import {remark} from 'remark'
+import gfm from 'remark-gfm'
+// @ts-ignore
+import remarkHeadingId from 'remark-heading-id'
 import html from 'remark-html'
 import prism from 'remark-prism'
+import remarkToc from 'remark-toc'
 
 const postDirectory = join(`${process.cwd()}/src/articles`)
 export async function convertMarkdownToHtml(md: any) {
   const result = await remark()
+    .use(remarkHeadingId)
     .use(html, {sanitize: false})
-    .use(prism)
+    .use(remarkToc, {ordered: true, tight: true})
+    .use(gfm)
+    .use(prism, {
+      plugins: ['line-numbers'],
+    })
     .process(md)
   return result.toString()
 }
@@ -17,7 +26,7 @@ export async function convertMarkdownToHtml(md: any) {
 export function getPostBySlug(slug: string, fields: string[]) {
   const realSlug = slug.replace(/\.md$/, '')
   const fullPath = join(postDirectory, `${realSlug}.md`)
-  const fileContents = readFileSync(fullPath, 'utf8')
+  const fileContents = readFileSync(fullPath, 'utf-8')
   const {data, content} = matter(fileContents)
   const object: {[key: string]: any} = {}
 

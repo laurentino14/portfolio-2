@@ -37,24 +37,26 @@ export default function Article({
             height={1000}
             quality={100}
             alt=''
-            className='aspect-[3/1.5] rounded-lg object-cover xl:w-2/3 mx-auto'
+            className='aspect-[3/1.5] rounded-lg object-cover lg:w-2/3 mx-auto'
           />
           <figcaption className='text-center w-full mt-6 text-sm font-medium text-slate-500'>
             123
           </figcaption>
         </figure>
         <div className='flex items-center mt-10 xl:mt-24 space-x-20 justify-start'>
-          <h1 className='font-neuzeit    text-5xl text-white'>{title}</h1>
+          <h1 className='font-neuzeit text-3xl w-full  md:text-5xl text-white'>
+            {title}
+          </h1>
           <Badge tag={tag} />
         </div>
-        <span className=''>
+        <span className='text-sm text-slate-400'>
           {new Date(date).toLocaleString('en-US', {dateStyle: 'full'})}
         </span>
         <p className='mt-5 xl:mt-10 mx-auto text-slate-300'>{summary}</p>
       </div>
       <main
-        id='content'
-        className='max-w-7xl mx-auto mt-20 min-h-[150vh] '
+        id='contentPost'
+        className={` max-w-7xl pb-1 mx-auto mt-20 min-h-[150vh]`}
         dangerouslySetInnerHTML={{__html: content}}
       />
     </>
