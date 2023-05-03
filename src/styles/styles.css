@@ -92,7 +92,7 @@
 }
 .task-list-item > input{
 background-color: #ffb709;
-@apply after:w-5 after:h-5 ml-2 mr-4 after:-bottom-1 relative after:rounded-sm after:outline-2 after:outline after:outline-zinc-900 after:text-slate-50 after:checked:outline-primary after:checked:bg-primary after:bg-zinc-800 after:absolute;
+@apply after:w-5 after:h-5 ml-2 mr-4 after:-bottom-1 relative after:rounded-sm after:border-2  after:border-zinc-900 after:text-slate-50 after:checked:border-primary after:checked:bg-primary after:bg-zinc-800 after:absolute;
 }
 
 .task-list-item > input:checked::after{
@@ -130,6 +130,7 @@ background-color: #ffb709;
 
  #contentPost > #a{
   opacity: 0;
+  @apply -mt-4 md:-mt-0;
  }
 
  #contentPost > #summary{

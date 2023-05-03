@@ -1,5 +1,5 @@
 ---
-title: 'Teste Title MD'
+title: 'Entendendo um pouco mais sobre SSR com NextJS asdasds asdasdas'
 slug: 'example'
 date: '2023-05-1'
 tag: 'reactjs'
@@ -25,7 +25,7 @@ coAuthors: [{name: 'Leonardo Jean', job: 'Junior Software Engineer'}]
 
 #### Table of contents
 
-# \_ {#a}
+## i {#a}
 
 ## Teste {#teste}
 
@@ -74,7 +74,7 @@ _Lorem_ ipsum dolor sit amet consectetur adipisicing elit. Quidem sunt
 1. aaa
 1. aaa
 
-# H1
+<!-- # H1 -->
 
 ## H2
 

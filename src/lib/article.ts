@@ -14,7 +14,7 @@ export async function convertMarkdownToHtml(md: any) {
   const result = await remark()
     .use(remarkHeadingId)
     .use(html, {sanitize: false})
-    .use(remarkToc, { ordered: true, tight: true, skip: '_' })
+    .use(remarkToc, { ordered: true, tight: true, skip: 'i', })
     .use(gfm)
     .use(prism, {
       plugins: ['line-numbers'],

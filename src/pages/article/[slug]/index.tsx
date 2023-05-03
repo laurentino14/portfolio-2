@@ -40,20 +40,24 @@ export default function Article({
             className='aspect-[3/1.5] rounded-lg object-cover lg:w-2/3 mx-auto'
           />
         </figure>
-        <div className='flex items-center mt-20 xl:mt-36 space-x-20 justify-start'>
-          <h1 className='font-neuzeit text-3xl w-full  md:text-5xl text-white'>
+        <div className='flex flex-col space-y-4 xl:space-y-0 mb-4 xl:mb-0 xl:flex-row items-start justify-between xl:items-center mt-10 xl:mt-24 xl:space-x-20 xl:justify-start'>
+          <h1 className='font-neuzeit text-2xl w-full tracking-tight md:text-3xl text-white'>
             {title}
           </h1>
-          <Badge tag={tag} />
+          <div className=''>
+            <Badge tag={tag} />
+          </div>
         </div>
         <span className='text-sm text-slate-400'>
           {new Date(date).toLocaleString('en-US', {dateStyle: 'full'})}
         </span>
-        <p className='mt-5 xl:mt-10 mx-auto text-slate-300'>{summary}</p>
+        <p className='mt-5 xl:mt-10 mx-auto leading-[120%] text-slate-300'>
+          {summary}
+        </p>
       </div>
       <main
         id='contentPost'
-        className={`prose  prose-a:text-slate-400 prose-img:transition  prose-img:hover:brightness-110  prose-a:no-underline lg:prose-blockquote:text-base lg:prose-lg max-w-7xl pb-1 mx-auto mt-20 min-h-[150vh]`}
+        className={`prose   prose-a:text-slate-400 prose-ol:prose-sm  prose-img:transition  prose-img:hover:brightness-110  prose-a:no-underline lg:prose-blockquote:text-base lg:prose-lg max-w-7xl pb-1 mx-auto mt-20 min-h-[150vh]`}
         dangerouslySetInnerHTML={{__html: content}}
       />
     </>

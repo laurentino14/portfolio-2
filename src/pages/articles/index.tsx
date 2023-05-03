@@ -17,26 +17,31 @@ export default function Articles({posts}: {posts: [Post]}) {
   const react = posts.filter(post => post.tag === 'react')
   const golang = posts.filter(post => post.tag === 'golang')
   const nodejs = posts.filter(post => post.tag === 'nodejs')
+  const feature = 'example'
   return (
     <>
       <Head>
         <title>Lucas Laurentino - Articles</title>
       </Head>
       <main className='max-w-7xl mx-auto pb-24 mt-24'>
-        {posts && <ArticlesCard post={posts[0]} />}
+        {posts
+          .filter(post => post.slug === feature)
+          .map(post => (
+            <ArticlesCard key={post.slug} post={post} />
+          ))}
         <Divider />
 
         <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-y-8 lg:gap-y-8 md:gap-4  mt-8'>
           {posts.map((post, i) => {
-            if (i !== 0 && i < 7) {
+            if (i < 4 && post.slug !== feature) {
               return <ArticlesCard key={post.slug} post={post} />
             }
           })}
         </div>
         <Divider />
-        <div className='grid  items-center gap-y-10'>
+        <div className='grid md:grid-cols-2 md:gap-x-10 items-center gap-y-10'>
           {posts.map((post, i) => {
-            if (i !== 0 && i > 6) {
+            if (post.slug !== feature && i > 3) {
               return <ArticlesCard i={i} key={post.slug} post={post} />
             }
           })}

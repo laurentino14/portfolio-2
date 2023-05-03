@@ -1,5 +1,5 @@
 ---
-title: 'Teste Title MD'
+title: 'Entendendo um pouco mais sobre SSR com NextJS asdasds asdasdas'
 slug: 'h'
 date: '2023-04-1'
 tag: 'nextjs'

@@ -3,6 +3,7 @@ import {motion} from 'framer-motion'
 import Image from 'next/image'
 import {useRouter} from 'next/router'
 import {useEffect, useState} from 'react'
+import Balancer from 'react-wrap-balancer'
 import {Badge} from '../Badge'
 type Props = {
   post: Post
@@ -22,11 +23,17 @@ export function ArticlesCard({post, i}: Props) {
         scale: 1.01,
       }}
       transition={{duration: 0.5, type: 'spring'}}
-      className='@container rounded-lg hover:cursor-pointer'>
+      style={{content: '123'}}
+      className={`${
+        i && ` group/all  relative overflow-hidden`
+      } @container rounded-lg hover:cursor-pointer`}>
+      <div className='w-full h-full group-hover/all:opacity-100 opacity-0 transition absolute inset-0 z-20 flex items-center justify-center font-biotif tracking-tight text-white text-sm @md:text-base @lg:text-xl text-center'>
+        <Balancer>{post.title}</Balancer>
+      </div>
       <div
         className={
           i
-            ? 'grid w-full grid-cols-9 max-h-40 gap-x-2 @sm:gap-x-3 @3xl:gap-x-5  @3xl:text-justify'
+            ? 'grid group-hover/all:blur-[1px] transition group-hover/all:brightness-[.15] w-full grid-cols-9 max-h-40 gap-x-2 @sm:gap-x-3 @3xl:gap-x-5  @3xl:text-justify'
             : `grid w-fit transition ease-in-out items-center  @md:w-full @md:gap-x-4 @3xl:grid-cols-2`
         }>
         <Image
@@ -47,13 +54,20 @@ export function ArticlesCard({post, i}: Props) {
               ? 'flex flex-col col-start-4 justify-center col-end-10 @4xl:col-start-3 @4xl:col-end-10'
               : 'flex h-fit 3xl:h-full @3xl:pr-4 flex-col justify-between space-y-4 pt-6'
           }  `}>
-          <div className={`${i && 'flex flex-col'}`}>
-            <div className=' w-fit bg-clip-text'>
+          <div className={`${i && 'flex flex-col'} relative`}>
+            <div className={i ? 'w-full  ' : 'w-fit '}>
               <h1
                 className={`${
-                  i ? 'text-base @3xl:text-base' : 'text-xl @3xl:text-3xl'
-                }  text-white font-bold tracking-wide `}>
-                {post.title}
+                  i ? '' : ''
+                }  text-white font-bold tracking-tight `}>
+                <Balancer
+                  className={
+                    i
+                      ? 'text-sm line-clamp-2 @sm:line-clamp-1 @md:line-clamp-2  @lg:max-w-[80%] @lg:text-base'
+                      : 'text-xl @3xl:text-3xl'
+                  }>
+                  {post.title}
+                </Balancer>
               </h1>
             </div>
             <div
@@ -62,7 +76,7 @@ export function ArticlesCard({post, i}: Props) {
                   ? ' items-center gap-4'
                   : ' flex-col gap-4 w-fit @xl:w-auto @xl:flex-row justify-between @xl:items-center'
               } text-xs font-semibold  flex text-slate-500`}>
-              <span>
+              <div className='flex w-full flex-col @sm:flex-row justify-between'>
                 {date !== null &&
                   date
                     .toLocaleString('en-US', {dateStyle: 'full'})[0]
@@ -71,8 +85,22 @@ export function ArticlesCard({post, i}: Props) {
                       .toLocaleString('en-US', {dateStyle: 'full'})
                       .slice(1)
                       .toLowerCase()}
-              </span>
-              <div className={`${i ? 'hidden' : 'relative'}`}>
+                {i && (
+                  <div
+                    className={
+                      post.tag === 'reactjs'
+                        ? 'text-primary'
+                        : post.tag === 'nextjs'
+                        ? 'text-purple-500'
+                        : post.tag === 'golang'
+                        ? 'text-cyan-500'
+                        : 'text-green-500'
+                    }>
+                    {post.tag}
+                  </div>
+                )}
+              </div>
+              <div className={`${i ? 'hidden ' : ''}`}>
                 <Badge tag={post.tag} />
               </div>
             </div>
@@ -80,7 +108,7 @@ export function ArticlesCard({post, i}: Props) {
             <p
               className={`${
                 i
-                  ? ' text-xs my-1 line-clamp-2 @3xl:text-sm   @2xl:line-clamp-3  text-slate-300'
+                  ? ' hidden @sm:static line-clamp-1 @sm:line-clamp-2  text-sm my-1 @md:line-clamp-2 @3xl:text-base     text-slate-300'
                   : ' line-clamp-3 mt-4 text-sm font-medium leading-7 @3xl:line-clamp-5 @3xl:leading-6 text-slate-300 '
               }`}>
               {post.summary}
@@ -88,7 +116,7 @@ export function ArticlesCard({post, i}: Props) {
           </div>
           <div
             className={`${
-              i ? 'flex-col items-start' : 'items-center space-x-4'
+              i ? 'flex-col  items-start' : 'items-center space-x-4'
             } flex   `}>
             {!i && (
               <Image
@@ -106,7 +134,9 @@ export function ArticlesCard({post, i}: Props) {
             </span>
             <div
               className={`${
-                i ? 'flex-row items-center space-x-2' : 'flex-col'
+                i
+                  ? 'flex-row !hidden @sm:flex  items-center space-x-2'
+                  : 'flex-col'
               } flex `}>
               <>
                 {i && (
@@ -130,7 +160,10 @@ export function ArticlesCard({post, i}: Props) {
               </>
             </div>
           </div>
-          <div className='text-slate-400 line-clamp-1 text-xs font-medium'>
+          <div
+            className={`${
+              i && '!hidden @sm:flex'
+            } text-slate-400 line-clamp-1 text-xs font-medium`}>
             {post.coAuthors.length === 1 ? 'Co-author: ' : 'Co-authors: '}
             <span className='text-white font-semibold '>
               {post.coAuthors.length === 1 &&
